@@ -28,21 +28,4 @@ package "build-essential" do
 	action :install
 end
 
-# Create the deployer user
-user "deployer" do
-	comment "Deployer user"
-	uid 1000
-	home "/home/deployer"
-	shell "/bin/bash"
-	password "$1$TyoDsgTM$C0wn3bHbsdat7H2i7ALgw/"
-end
-
-directory "/home/deployer" do
-  owner "deployer"
-  group "deployer"
-  mode 0700
-  action :create
-end
-
-# Authorized keys
-authorized_keys_for "deployer"
+include_recipe "fine-io::deployer"
