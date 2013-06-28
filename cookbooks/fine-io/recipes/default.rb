@@ -28,4 +28,9 @@ package "build-essential" do
 	action :install
 end
 
+# Create the deployer user
 include_recipe "fine-io::deployer"
+
+# Install the Dream Stack
+include_recipe "redis"
+include_recipe "nodejs"

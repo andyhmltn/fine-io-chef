@@ -9,6 +9,7 @@ What does it do?
 It currently installs:
   * nginx
   * redis
+  * node.js
 
 It also creates the following users:
   * deployer
@@ -18,7 +19,6 @@ The final thing it will do is modify vital files such as the hosts file to add a
 What will it do?
 ============
 Hopefully, when I get time I'll get it installing the following:
-  * Node.JS
   * Ruby via RVM
   * MySQL
   * SQLite
