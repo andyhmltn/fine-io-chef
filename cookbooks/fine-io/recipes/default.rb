@@ -32,5 +32,4 @@ end
 include_recipe "fine-io::deployer"
 
 # Install the Dream Stack
-include_recipe "redis"
 include_recipe "nodejs"
