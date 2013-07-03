@@ -31,5 +31,21 @@ end
 # Create the deployer user
 include_recipe "fine-io::deployer"
 
-# Install the Dream Stack
-include_recipe "nodejs"
+# Create the Nginx config files
+template "/etc/nginx/sites-enabled/000-default" do
+	source "000default.erb"
+	owner "deployer"
+	group "deployer"
+	mode 0644
+end
+
+template "/var/www/index.html" do
+	source "welcome.erb"
+	owner "deployer"
+	group "deployer"
+	mode 0644
+end
+
+service "nginx" do
+	action :restart
+end
